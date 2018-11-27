@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Quantum Computing Talk</title>
+    </head>
+
+    <body>
+        <h1>Write QASM below and submit to simulate it</h1>
+        <p><a href="https://github.com/Qiskit/openqasm/tree/master/examples">QASM examples here.</a> This'll just simulate the program on commodity hardware.</p>
+        <textarea id="code"></textarea>
+        <textarea id="res" readonly></textarea>
+        <input type="button" value="Simulate Code!" onclick="tryRunningCode()"></input>
+        <script>
+var LAMBDA_URL = "";
+
+function tryRunningCode(){
+    var qasm = document.getElementById('code').value;
+    fetch(LAMBDA_URL, {
+        mode: 'cors',
+        credentials: 'omit',
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            'code': qasm
+        })
+    }).then(resp => resp.json())
+      .then(resp => document.getElementById('res').value = resp.body)
+      .catch(e => document.getElementById('res').value = e.message);
+}
+
+        </script>
+    </body>
+</html>
