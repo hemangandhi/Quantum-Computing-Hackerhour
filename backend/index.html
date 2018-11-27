@@ -11,7 +11,7 @@
         <textarea id="res" readonly></textarea>
         <input type="button" value="Simulate Code!" onclick="tryRunningCode()"></input>
         <script>
-var LAMBDA_URL = "";
+var LAMBDA_URL = "/code";
 
 function tryRunningCode(){
     var qasm = document.getElementById('code').value;
@@ -26,7 +26,7 @@ function tryRunningCode(){
             'code': qasm
         })
     }).then(resp => resp.json())
-      .then(resp => document.getElementById('res').value = resp.body)
+      .then(resp => document.getElementById('res').value = JSON.stringify(resp.result))
       .catch(e => document.getElementById('res').value = e.message);
 }
 

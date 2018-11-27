@@ -1,32 +1,29 @@
 import qiskit as q
-import json
+from flask import Flask, request, jsonify
+
+app = Flask(__name__, static_url_path="/", static_folder=".")
 
 def exec_circuit(qasm):
     circ = q.QuantumCircuit.from_qasm_str(qasm)
-    sim = q.execute(circ, q.Aer.get_backend('qasm_simulator'))
-    return sim.result()
+    sim = q.execute(circ, q.Aer.get_backend('qasm_simulator_py'))
+    return sim.result().get_counts()
 
-def add_cors_headers(resp):
-    """
-    Adds headers to allow for cross-origin requests.
-
-    Not gonna lie, stackoverflow told us to do it
-    and it works. We don't know how or why.
-    """
-    if 'headers' not in resp:
-        resp['headers'] = dict()
-    resp['headers']['Access-Control-Allow-Origin'] = '*',
-    resp['headers']['Access-Control-Allow-Headers'] ='Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
-    resp['headers']['Access-Control-Allow-Credentials'] = True,
-    return resp
-
-def lambda_handler(event, context):
+@app.route('/code', methods=['POST'])
+def lambda_handler():
+    event = request.json
     if 'code' not in event:
-        return add_cors_headers({"statusCode":400,"body":"Invalid Request"})
-    else:
-        try:
-            res = exec_circuit(event['code'])
-            j = json.loads({"result": res})
-            return add_cors_headers({"statusCode":200,"body":j})
-        except e:
-            return add_cors_headers({"statusCode":400,"body":str(e)})
+        return "Invalid Request", 400
+
+    try:
+        res = exec_circuit(event['code'])
+        return jsonify({"result": res})
+    except Exception as e:
+        return str(e), 400
+
+@app.route('/')
+def pendejo():
+    return app.send_static_file('index.html')
+
+if __name__ == "__main__":
+    # app.run(port=5000, debug=True, host='0.0.0.0')
+    app.run(port=5000, debug=True)
