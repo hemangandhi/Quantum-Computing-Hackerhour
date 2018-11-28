@@ -31,7 +31,7 @@
 \usepackage{braket}
 
 %shortcuts
-\newcommand{\C}{\mathbb{C}}
+\renewcommand{\C}{\mathbb{C}}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -71,31 +71,51 @@
 \frametitle{UwU, What This?}
 This is an intro to quantum computing.
 So what I'll be doing is going over brief,
-sometimes not very technical answers to the following (in order of priority):
+sometimes not very technical answers to the following (in chronological order):
 \begin{itemize}
     \item What should I have told my \textit{insert family member here} about this last week?
-    \item Where can I go to mess with quantum computing?
-    \item What is quantum computing?
     \item What are some questions people are asking about it?
+    \item What is quantum computing?
+    \item Where can I go to mess with quantum computing?
+\end{itemize}
+\end{frame}
+
+\section{QC Applications and Questions}
+
+\begin{frame}
+\frametitle{How to use this?}
+This is a subset:
+\begin{itemize}
+    \item Fast factoring (Shor's Algorithm)
+    \item Computational (micro)-biology
+    \item Quantum Machine Learning
+    \item Quantum Cryptography
 \end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{What I Assume about this}
-I think this is true: you need physics, math, and CS, to fully understand everything...
+\frametitle{How to Measure the Benefit?}
+There is a field called Quantum complexity theory. We know that quantum computers are at most exponentially faster
+from this.
+
+We also get that we can solve circuit satisfiability in a square-root of the time (with an error bound).
+
+Searches are also theorized to be in a square-root of the time. \cite{q-complexity}
+
+Only recently can we verify whether a quantum computer even used quantum magic to compute. \cite{q-verification}
 \end{frame}
 
 \begin{frame}
-\frametitle{What I Assume about this}
-I think this is true: you need physics, math, and CS, to fully understand everything... 
-
-...but you don't need to understand all the details to mess with this!
-
-I'll mention pre-req courses for topics I cover, if you do actually want to understand everything.
-This is so that you can know what's going on if you want to.
+\frametitle{Open Questions}
+This is a subset:
+\begin{itemize}
+    \item How to implement\dots anything?
+    \item What should programming languages look like?
+    \item How to scale quantum computers to match the requirements?
+\end{itemize}
 \end{frame}
 
-\section{What is a Q-bit? How to use them?}
+\section{QC Basics}
 
 \begin{frame}
 \frametitle{What is Quantum Computing?}
@@ -122,7 +142,7 @@ Much of what follows about how Q-bits work is thanks to \cite{long-video}.
 \begin{definition}
     We write bits as vectors. So $\begin{pmatrix}1 \\ 0\end{pmatrix}$ is the $0$ bit,
     written in ``Dirac notation'' as
-    $\braket{|0}$.
+    $\ket{0}$.
 \end{definition}
 
 Any guesses about representing a 1-bit?
@@ -290,28 +310,13 @@ $H$ as the Hadamard, giving us our operators. This results in the below (thanks 
 \end{figure}
 \end{frame}
 
-\section{Messing with Q-Bits}
+\section{Messing with QC}
 
 \begin{frame}
 \frametitle{IBM's API}
-This is a subset:
-\begin{itemize}
-    \item Fast factoring
-    \item Computational (micro)-biology
-    \item Quantum Machine Learning
-\end{itemize}
-\end{frame}
+Qiskit is bae.
 
-\section{The frontier}
-
-\begin{frame}
-\frametitle{How to use this?}
-This is a subset:
-\begin{itemize}
-    \item Fast factoring
-    \item Computational (micro)-biology
-    \item Quantum Machine Learning
-\end{itemize}
+You write QASM (Quantum-ASM) files and Qiskit runs them on a local simulator or online on a real quantum computer.
 \end{frame}
 
 \begin{frame}
@@ -327,6 +332,12 @@ This is a subset:
 \bibitem[Tatourian, 2018]{img-blog} Alan Tatourian (2018)
 \newblock Quantum Computing for Computer Scientists
 \newblock \emph{tatourian.blog} \url{https://tatourian.blog/2018/09/01/quantum-computing-for-computer-scientists/}
+\bibitem[Cleve]{q-complexity} Richard Cleve
+\newblock An Introduction to Quantum Complexity Theory
+\newblock \emph{University of Calgary} \url{https://cds.cern.ch/record/392006/files/9906111.pdf}
+\bibitem[Quanta, 2018]{q-verification} Erica Klarreich
+\newblock Graduate Student Solves Quantum Verification Problem
+\newblock \emph{Quanta Magazine} \url{https://www.quantamagazine.org/graduate-student-solves-quantum-verification-problem-20181008/}
 \end{thebibliography}
 }
 \end{frame}

@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Intro: what is this presentation}{3}{0}{1}
+\beamer@sectionintoc {2}{QC Applications and Questions}{4}{0}{2}
+\beamer@sectionintoc {3}{QC Basics}{7}{0}{3}
+\beamer@sectionintoc {4}{Messing with QC}{17}{0}{4}
