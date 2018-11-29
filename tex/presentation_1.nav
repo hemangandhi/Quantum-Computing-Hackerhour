@@ -44,12 +44,29 @@
 \headcommand {\sectionentry {4}{Messing with QC}{17}{Messing with QC}{0}}
 \headcommand {\slideentry {4}{0}{1}{17/17}{}{0}}
 \headcommand {\beamer@framepages {17}{17}}
-\headcommand {\slideentry {4}{0}{2}{18/18}{}{0}}
+\headcommand {\beamer@sectionpages {17}{17}}
+\headcommand {\beamer@subsectionpages {17}{17}}
+\headcommand {\sectionentry {5}{An example: the Deutsch Oracle (time-permitting)}{18}{An example: the Deutsch Oracle (time-permitting)}{0}}
+\headcommand {\slideentry {5}{0}{1}{18/18}{}{0}}
 \headcommand {\beamer@framepages {18}{18}}
-\headcommand {\slideentry {4}{0}{3}{19/19}{}{0}}
+\headcommand {\slideentry {5}{0}{2}{19/19}{}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\beamer@partpages {1}{19}}
-\headcommand {\beamer@subsectionpages {17}{19}}
-\headcommand {\beamer@sectionpages {17}{19}}
-\headcommand {\beamer@documentpages {19}}
-\headcommand {\gdef \inserttotalframenumber {19}}
+\headcommand {\slideentry {5}{0}{3}{20/20}{}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\slideentry {5}{0}{4}{21/21}{}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\slideentry {5}{0}{5}{22/22}{}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\slideentry {5}{0}{6}{23/23}{}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {5}{0}{7}{24/24}{}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\slideentry {5}{0}{8}{25/25}{}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\slideentry {5}{0}{9}{26/26}{}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\beamer@partpages {1}{26}}
+\headcommand {\beamer@subsectionpages {18}{26}}
+\headcommand {\beamer@sectionpages {18}{26}}
+\headcommand {\beamer@documentpages {26}}
+\headcommand {\gdef \inserttotalframenumber {26}}

@@ -179,7 +179,7 @@ as certain matrices.
 Identity & $\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}$ \\
 Not & $\begin{pmatrix}0 & 1 \\ 1 & 0\end{pmatrix}$\\
 Set to 0 & $\begin{pmatrix}1 & 1 \\ 0 & 0\end{pmatrix}$\\
-Set to 0 & $\begin{pmatrix}0 & 0 \\ 1 & 1\end{pmatrix}$\\
+Set to 1 & $\begin{pmatrix}0 & 0 \\ 1 & 1\end{pmatrix}$\\
 \bottomrule
 \end{tabular}
 \caption{The Classical Unary Bitwise Operators}
@@ -320,6 +320,109 @@ $H$ as the Hadamard, giving us our operators. This results in the below (thanks 
 You write QASM (Quantum-ASM) files and Qiskit runs them on a local simulator or online on a real quantum computer.
 
 There is an online interface: \href{https://quantumexperience.ng.bluemix.net/qx/editor}{and it's free for like 5 runs on a Quantum computer.}
+\end{frame}
+
+\section{An example: the Deutsch Oracle (time-permitting)}
+
+\begin{frame}
+\frametitle{The Deutsch Oracle}
+
+Let $f: \{0, 1\} \to \{0, 1\}$ (so $f$ is a bit operator).
+How do we know if it's constant? How can you do it on a standard computer?
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Deutsch Oracle: the Quantum Advantage}
+
+Let $f: \{0, 1\} \to \{0, 1\}$ (so $f$ is a bit operator).
+How do we know if it's constant?
+
+One query? He superpose.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Deutsch Oracle: Reversibility}
+
+$f(x) = 0$ is not reversible.
+
+\begin{block}{Reversibility Hack}
+    The hack: operate on two bits: $g(\ket{0, x}) = \ket{f(x), x}$
+    (Do not look at $\ket{1, x}$.)
+    The idea is that the 0 bit is the output wire and $x$ the input.
+\end{block}
+
+This $g$ is reversible. (Only proof I know: matrices.)
+
+Asking about $g$ is equivalent to asking about $f$, but now you can use quantum operators.
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Deutsch Oracle: What the Constant Functions Look Like}
+
+\begin{block}{Constant 0}
+nothing on either wire.
+\end{block}
+
+\begin{block}{Constant 1}
+$X$ (the flip) on the output wire.
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Deutsch Oracle: What the Variable Functions Look Like}
+
+\begin{block}{Identity}
+output = CNOT(input, output)
+\end{block}
+
+\begin{block}{Negation}
+output = Not(CNOT(input, output))
+\end{block}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{The Deutsch Oracle: Solution}
+
+\begin{block}{Solution}
+input = Hadamard(second bit of g(Hadamard(1), Hadamard(1))
+
+input is 1 iff $g$ constant.
+\end{block}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.75\linewidth]{qt-unit-circle.jpg}
+    \label{fig:qt-unit-circle}
+    \caption{The Map for Moving Q-Bits around}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Deutsch Oracle: How the CNOT Works}
+
+\begin{align*}
+    C \left(\begin{pmatrix}{1 \over \sqrt{2}} \\{-1 \over \sqrt{2}}\end{pmatrix}
+        \otimes \begin{pmatrix}{1 \over \sqrt{2}} \\{-1 \over \sqrt{2}}\end{pmatrix}\right)
+    &= C \begin{pmatrix}1/2 \\ -1/2 \\ -1/2 \\ 1/2 \end{pmatrix}
+    = {1 \over 2}
+        \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 0 & 1 \\
+        0 & 0 & 1 & 0 \\
+        \end{pmatrix}
+        \begin{pmatrix}1 \\ -1 \\ -1 \\ 1 \end{pmatrix}\\
+    &= {1 \over 2}
+        \begin{pmatrix}1 \\ -1 \\ 1 \\ -1 \end{pmatrix}
+    = \left(\begin{pmatrix}{1 \over \sqrt{2}} \\{1 \over \sqrt{2}}\end{pmatrix}
+        \otimes \begin{pmatrix}{1 \over \sqrt{2}} \\{-1 \over \sqrt{2}}\end{pmatrix}\right)
+\end{align*}
+
 \end{frame}
 
 \begin{frame}

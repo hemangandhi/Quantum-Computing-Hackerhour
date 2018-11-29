@@ -2,3 +2,4 @@
 \beamer@sectionintoc {2}{QC Applications and Questions}{4}{0}{2}
 \beamer@sectionintoc {3}{QC Basics}{7}{0}{3}
 \beamer@sectionintoc {4}{Messing with QC}{17}{0}{4}
+\beamer@sectionintoc {5}{An example: the Deutsch Oracle (time-permitting)}{18}{0}{5}
