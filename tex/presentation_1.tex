@@ -31,6 +31,10 @@
 \usepackage{braket}
 \usepackage{hyperref}
 
+\hypersetup{
+    colorlinks=true
+}
+
 %shortcuts
 \renewcommand{\C}{\mathbb{C}}
 
@@ -214,7 +218,7 @@ What does invertibility mean here?
     \begin{pmatrix} 1 \\ 2 \end{pmatrix}
     \otimes
     \begin{pmatrix} 3 \\ 4 \\ 5 \end{pmatrix} = 
-    \begin{pmatrix} 3 \\ 4 \\ 6 \\ 8 \\ 5 \\ 10 \end{pmatrix}
+    \begin{pmatrix} 3 \\ 4 \\ 5 \\6 \\ 8 \\  10 \end{pmatrix}
 \]
 
 \[
@@ -349,7 +353,6 @@ $f(x) = 0$ is not reversible.
 
 \begin{block}{Reversibility Hack}
     The hack: operate on two bits: $g(\ket{0, x}) = \ket{f(x), x}$
-    (Do not look at $\ket{1, x}$.)
     The idea is that the 0 bit is the output wire and $x$ the input.
 \end{block}
 
