@@ -1,5 +1,5 @@
-\beamer@sectionintoc {1}{Intro: what is this presentation}{3}{0}{1}
-\beamer@sectionintoc {2}{QC Applications and Questions}{5}{0}{2}
-\beamer@sectionintoc {3}{QC Basics}{8}{0}{3}
-\beamer@sectionintoc {4}{Messing with QC}{17}{0}{4}
-\beamer@sectionintoc {5}{An example: the Deutsch Oracle (time-permitting)}{18}{0}{5}
+\beamer@sectionintoc {1}{Intro: what is this presentation}{2}{0}{1}
+\beamer@sectionintoc {2}{QC Applications and Questions}{4}{0}{2}
+\beamer@sectionintoc {3}{QC Basics}{7}{0}{3}
+\beamer@sectionintoc {4}{Messing with QC}{16}{0}{4}
+\beamer@sectionintoc {5}{An example: the Deutsch Oracle (time-permitting)}{17}{0}{5}

@@ -59,10 +59,10 @@
 \titlepage % Print the title page as the first slide
 \end{frame}
 
-\begin{frame}
-\frametitle{Overview} % Table of contents slide, comment this block out to remove it
-\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
-\end{frame}
+% \begin{frame}
+% \frametitle{Overview} % Table of contents slide, comment this block out to remove it
+% \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+% \end{frame}
 
 %----------------------------------------------------------------------------------------
 %	PRESENTATION SLIDES
@@ -334,6 +334,19 @@ There is an online interface: \href{https://quantumexperience.ng.bluemix.net/qx/
 
 Let $f: \{0, 1\} \to \{0, 1\}$ (so $f$ is a bit operator).
 How do we know if it's constant? How can you do it on a standard computer?
+
+\begin{table}
+\begin{tabular}{l l}
+\toprule
+\textbf{Bit Operation} & \textbf{Matrix}\\
+\midrule
+Identity & $\begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix}$ \\
+Not & $\begin{pmatrix}0 & 1 \\ 1 & 0\end{pmatrix}$\\
+Set to 0 & $\begin{pmatrix}1 & 1 \\ 0 & 0\end{pmatrix}$\\
+Set to 1 & $\begin{pmatrix}0 & 0 \\ 1 & 1\end{pmatrix}$\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \end{frame}
 
